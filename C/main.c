@@ -1,22 +1,19 @@
 #include <stdio.h>
-int add_one(int *a);
-struct TEST
+struct AA function(int j);
+struct AA
 {
-    int c;
+    int i;
 };
 int main()
 {
-    struct TEST t;
-    struct TEST *pt = &t;
-    //pt->c=0;
-    (*pt).c=0;
-    add_one(&t.c);
-    printf("t.c : %d \n",t.c);
-    add_one(&t.c);
-    printf("t.c : %d \n",t.c);
-}
-int add_one(int *a)
-{
-    *a+=2;
+    struct AA a;
+    a=function(10);
+    printf("a.i : %d \n",a.i);
     return 0;
+}
+struct AA function(int j)
+{
+    struct AA A;
+    A.i=j;
+    return  A;
 }
